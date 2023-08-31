@@ -70,7 +70,7 @@ int	b2a(char *s)
 		c = 0;
 		while(*s == '0' || *s == '1')
 		{
-			c = (c * 2) + *s;
+			c = (c * 2) + (*s - '0');
 			s++;
 		}
 		printf("%c", c);
@@ -84,7 +84,7 @@ int	b2a(char *s)
 /* Each character is separated by a space. */
 int	a2b(char *s)
 {
-	unsigned int	i;
+	int				i;
 	unsigned char	c;
 
 	while (*s)
@@ -92,7 +92,7 @@ int	a2b(char *s)
 		i = 8;
 		while (--i >= 0)
 		{
-			c = *s;
+			c = *s++;
 			printf("%c", ((c >> i) & 1) + '0');
 		}
 		printf(" ");
