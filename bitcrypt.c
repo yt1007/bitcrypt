@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bitcrypt.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yetay <yetay@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/31 16:52:53 by yetay             #+#    #+#             */
+/*   Updated: 2023/08/31 16:52:53 by yetay            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 int	isbinary(char *s);
@@ -13,7 +25,7 @@ int	main(int argc, char **argv)
 		perror("bitcrypt: no input.\n");
 		return (1);
 	}
-	if (isbinary(argv[1])
+	if (isbinary(argv[1]))
 		return(b2a(argv[1]));
 	else
 		return(a2b(argv[1]));
@@ -26,11 +38,20 @@ int	isbinary(char *s)
 	while (*s)
 	{
 		if (*s == '0')
+		{
+			s++;
 			continue ;
+		}
 		if (*s == '1')
+		{
+			s++;
 			continue ;
+		}
 		if (*s == ' ')
+		{
+			s++;
 			continue ;
+		}
 		return (0);
 	}
 	return (1);
