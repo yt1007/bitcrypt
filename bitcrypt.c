@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		perror("bitcrypt: no input.\n");
+		perror("bitcrypt: bad input; exactly one input is required, enclose strings with whitespaces within quotes.\n");
 		return (1);
 	}
 	if (isbinary(argv[1]))
