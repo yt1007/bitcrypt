@@ -84,17 +84,16 @@ int	b2a(char *s)
 /* Each character is separated by a space. */
 int	a2b(char *s)
 {
-	int				i;
+	unsigned int	i;
 	unsigned char	c;
 
 	while (*s)
 	{
 		i = 8;
-		while (--i >= 0)
-		{
-			c = *s++;
+		c = *s;
+		while (i--)
 			printf("%c", ((c >> i) & 1) + '0');
-		}
+		s++;
 		printf(" ");
 	}
 	printf("\n");
